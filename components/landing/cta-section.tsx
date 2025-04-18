@@ -162,7 +162,7 @@ export default function CallToActionSection() {
               <input type="hidden" name="form-name" value="consultation" />
               <div className="hidden">
                 <label>
-                  Don\'t fill this out if you\'re human: <input name="bot-field" />
+                  Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
                 </label>
               </div>
               <div className="grid grid-cols-2 gap-4">
@@ -233,7 +233,7 @@ export default function CallToActionSection() {
 
               <div className="space-y-2">
                 <label htmlFor="interest" className="block text-sm font-work-sans font-medium text-[#1E1A18] dark:text-[#E6D3AF]">
-                  I\'m interested in
+                  I&apos;m interested in
                 </label>
                 <select
                   id="interest"

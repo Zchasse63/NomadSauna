@@ -71,7 +71,7 @@ export default function ContactPage() {
         </h1>
 
         <p className="text-xl text-[#5B402D] dark:text-[#D9C4A3] mb-12">
-          Have questions about our saunas or services? We\'re here to help. Fill out the form below or use our contact information to get in touch with our team.
+          Have questions about our saunas or services? We&apos;re here to help. Fill out the form below or use our contact information to get in touch with our team.
         </p>
 
         <div className="grid md:grid-cols-2 gap-12 mb-16">
@@ -91,7 +91,7 @@ export default function ContactPage() {
               <input type="hidden" name="form-name" value="contact" />
               <div className="hidden">
                 <label>
-                  Don\'t fill this out if you\'re human: <input name="bot-field" />
+                  Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
                 </label>
               </div>
               <div className="space-y-2">
