@@ -30,8 +30,7 @@ export function OptimizedImage({
       src={imgSrc}
       alt={alt}
       onError={handleError}
-      unoptimized={props.unoptimized ?? false}
-      loading={props.priority ? "eager" : "lazy"}
+      unoptimized={true}
     />
   );
 }
