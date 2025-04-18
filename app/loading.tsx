@@ -1,35 +1,29 @@
+"use client";
+
 import { Skeleton } from "@/components/ui/skeleton";
+import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
 
 export default function Loading() {
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    // Hide the loading indicator after a short delay
+    const timer = setTimeout(() => {
+      setIsVisible(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!isVisible) return null;
+
   return (
-    <div className="container mx-auto px-4 py-24 mt-16">
-      <div className="max-w-4xl mx-auto">
-        {/* Header skeleton */}
-        <Skeleton className="h-12 w-3/4 mb-6" />
-        <Skeleton className="h-6 w-full mb-12" />
-        
-        {/* Content skeleton */}
-        <div className="grid md:grid-cols-2 gap-12 mb-16">
-          <div className="space-y-6">
-            <Skeleton className="h-8 w-1/2 mb-4" />
-            <Skeleton className="h-64 w-full rounded-lg" />
-            <div className="space-y-4">
-              <Skeleton className="h-4 w-full" />
-              <Skeleton className="h-4 w-5/6" />
-              <Skeleton className="h-4 w-4/6" />
-            </div>
-          </div>
-          
-          <div className="space-y-6">
-            <Skeleton className="h-8 w-1/2 mb-4" />
-            <div className="space-y-4">
-              <Skeleton className="h-12 w-full" />
-              <Skeleton className="h-12 w-full" />
-              <Skeleton className="h-12 w-full" />
-              <Skeleton className="h-36 w-full" />
-              <Skeleton className="h-12 w-full" />
-            </div>
-          </div>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-background transition-opacity duration-500">
+      <div className="flex flex-col items-center gap-4">
+        <div className="h-12 w-12 animate-spin rounded-full border-4 border-[#D9C4A3] border-t-[#5B402D]" />
+        <div className={cn("text-lg font-serif text-[#5B402D] dark:text-[#D9C4A3]")}>
+          Loading...
         </div>
       </div>
     </div>

@@ -92,8 +92,9 @@ const config = {
           },
         },
         "fade-in": {
-          from: { opacity: "0", transform: "translateY(-10px)" },
-          to: { opacity: "1", transform: "none" },
+          "0%": { opacity: "0", transform: "translateY(8px)", filter: "blur(0.5px)" },
+          "50%": { filter: "blur(0px)" },
+          "100%": { opacity: "1", transform: "translateY(0px)" },
         },
         "fade-up": {
           from: { opacity: "0", transform: "translateY(20px)" },
@@ -121,7 +122,7 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         "image-glow": "image-glow 4100ms 600ms ease-out forwards",
-        "fade-in": "fade-in 1000ms var(--animation-delay, 0ms) ease forwards",
+        "fade-in": "fade-in 800ms cubic-bezier(0.22, 1, 0.36, 1) forwards",
         "fade-up": "fade-up 1000ms var(--animation-delay, 0ms) ease forwards",
         shimmer: "shimmer 8s infinite",
         marquee: "marquee var(--duration) infinite linear",
