@@ -107,10 +107,10 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className="fixed left-0 top-0 z-50 w-full translate-y-[-1rem] animate-fade-in border-b border-[#5B402D]/5 dark:border-[#E6D3AF]/5 opacity-0 bg-[#E6D3AF]/40 dark:bg-[#1E1A18]/40 backdrop-blur-sm [--animation-delay:600ms]">
+      <header className="fixed left-0 top-0 z-50 w-full border-b border-[#5B402D]/10 dark:border-[#E6D3AF]/10 bg-[#E6D3AF]/60 dark:bg-[#1E1A18]/60 backdrop-blur-sm">
         <div className="container flex h-[4.5rem] items-center justify-between">
           <Link className="text-md flex items-center gap-2" href="/">
-            <img src="/logo-no-bg.png" alt="Nomad Sauna Co." className="h-16 w-auto object-contain" />
+            <img src="/logo-no-bg.png" alt="Nomad Sauna Co." className="h-12 w-auto object-contain" />
           </Link>
 
           <div className="ml-auto flex h-full items-center">
@@ -151,7 +151,7 @@ export function SiteHeader() {
         >
           <div className="container flex h-[3.5rem] items-center justify-between">
             <Link className="text-md flex items-center gap-2" href="/">
-              <img src="/logo-no-bg.png" alt="Nomad Sauna Co." className="h-16 w-auto object-contain" />
+              <img src="/logo-no-bg.png" alt="Nomad Sauna Co." className="h-12 w-auto object-contain" />
             </Link>
 
             <button
