@@ -5,9 +5,7 @@ import { useEffect, useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import ShowcaseSection from "@/components/landing/showcase-section";
 import ServicesSection from "@/components/landing/services-section";
-import TestimonialsSection from "@/components/landing/testimonials-section";
 import CtaSection from "@/components/landing/cta-section";
-import FaqSection from "@/components/landing/faq-section";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,7 +14,7 @@ export default function Home() {
     // Preload the hero image
     const img = new Image();
     img.src = "/images/showcase/IMG_7359.jpeg";
-    
+
     img.onload = () => {
       // Add a small delay to ensure smooth transition
       setTimeout(() => {
@@ -47,9 +45,7 @@ export default function Home() {
       )}
       <ShowcaseSection />
       <ServicesSection />
-      <TestimonialsSection />
       <CtaSection />
-      <FaqSection />
     </main>
   );
 }
