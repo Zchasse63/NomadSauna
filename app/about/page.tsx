@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import Link from "next/link";
 
 export default function AboutPage() {
@@ -16,7 +16,7 @@ export default function AboutPage() {
           </p>
 
           <div className="my-12 aspect-video relative rounded-xl overflow-hidden">
-            <Image
+            <OptimizedImage
               src="/images/showcase/IMG_7359.jpeg"
               alt="Nomad Sauna Co. craftsmanship"
               fill
@@ -59,7 +59,7 @@ export default function AboutPage() {
           </p>
 
           <div className="my-12 aspect-video relative rounded-xl overflow-hidden">
-            <Image
+            <OptimizedImage
               src="/images/showcase/IMG_7362.jpeg"
               alt="Nomad Sauna Co. craftsmanship"
               fill
