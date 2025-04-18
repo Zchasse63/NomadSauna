@@ -55,7 +55,7 @@ export default function AboutPage() {
             Every Nomad sauna is handcrafted using premium Western Red Cedar and traditional Finnish building techniques. We believe in creating saunas that not only look beautiful but deliver an authentic experience that promotes wellness and relaxation.
           </p>
           <p className="text-[#5B402D] dark:text-[#D9C4A3] mb-6">
-            Our team works closely with each client to understand their needs, space constraints, and aesthetic preferences. Whether you\'re looking for a compact barrel sauna for your backyard or a custom-built sauna room for your home, we approach each project with the same dedication to quality and authenticity.
+            Our team works closely with each client to understand their needs, space constraints, and aesthetic preferences. Whether you&apos;re looking for a compact barrel sauna for your backyard or a custom-built sauna room for your home, we approach each project with the same dedication to quality and authenticity.
           </p>
 
           <div className="my-12 aspect-video relative rounded-xl overflow-hidden">
@@ -69,7 +69,7 @@ export default function AboutPage() {
 
           <h2 className="text-3xl font-serif font-semibold mb-4 text-[#1E1A18] dark:text-[#E6D3AF]">Our Commitment</h2>
           <p className="text-[#5B402D] dark:text-[#D9C4A3] mb-6">
-            At Nomad Sauna Co., we\'re committed to not just building saunas, but to educating our community about the rich traditions and health benefits of regular sauna use. We believe that the sauna is more than just a luxury—it\'s a pathway to better physical and mental wellbeing.
+            At Nomad Sauna Co., we&apos;re committed to not just building saunas, but to educating our community about the rich traditions and health benefits of regular sauna use. We believe that the sauna is more than just a luxury—it&apos;s a pathway to better physical and mental wellbeing.
           </p>
           <p className="text-[#5B402D] dark:text-[#D9C4A3] mb-10">
             We stand behind every sauna we build with comprehensive warranties and ongoing support, ensuring that your Nomad sauna will be a source of wellness and joy for years to come.
