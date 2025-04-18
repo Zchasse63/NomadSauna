@@ -1,0 +1,28 @@
+0 verbose cli /Users/zach/.nvm/versions/node/v18.20.8/bin/node /Users/zach/.nvm/versions/node/v18.20.8/bin/npm
+1 info using npm@10.8.2
+2 info using node@v18.20.8
+3 silly config load:file:/Users/zach/.nvm/versions/node/v18.20.8/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/zach/.npmrc
+5 silly config load:file:/Users/zach/.nvm/versions/node/v18.20.8/etc/npmrc
+6 verbose title npm install pnpm
+7 verbose argv "install" "--global" "pnpm"
+8 verbose logfile logs-max:10 dir:/Users/zach/Downloads/Nomad Magic/.npm-cache/_logs/2025-04-18T20_36_43_696Z-
+9 verbose logfile /Users/zach/Downloads/Nomad Magic/.npm-cache/_logs/2025-04-18T20_36_43_696Z-debug-0.log
+10 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+11 silly logfile done cleaning log files
+12 silly idealTree buildDeps
+13 silly fetch manifest pnpm@*
+14 silly packumentCache full:https://registry.npmjs.org/pnpm cache-miss
+15 http fetch GET 200 https://registry.npmjs.org/pnpm 212ms (cache miss)
+16 silly packumentCache full:https://registry.npmjs.org/pnpm set size:undefined disposed:false
+17 silly placeDep ROOT pnpm@10.8.1 OK for:  want: *
+18 silly reify moves {}
+19 silly tarball no local data for pnpm@https://registry.npmjs.org/pnpm/-/pnpm-10.8.1.tgz. Extracting by manifest.
+20 http fetch GET 200 https://registry.npmjs.org/pnpm/-/pnpm-10.8.1.tgz 440ms (cache miss)
+21 silly ADD node_modules/pnpm
+22 verbose cwd /Users/zach/Downloads/Nomad Magic
+23 verbose os Darwin 24.3.0
+24 verbose node v18.20.8
+25 verbose npm  v10.8.2
+26 verbose exit 0
+27 info ok
