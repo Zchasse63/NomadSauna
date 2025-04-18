@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <style>
+    .logo-bg { fill: #E6D3AF; }
+    .logo-fg { fill: #1E1A18; }
+  </style>
+  <rect class="logo-bg" width="200" height="200" rx="0" ry="0" />
+  <g transform="translate(40, 30)">
+    <!-- Sauna hat/roof -->
+    <path class="logo-fg" d="M60,0 L120,60 L0,60 Z" />
+    
+    <!-- Face outline -->
+    <rect class="logo-fg" x="20" y="60" width="80" height="70" rx="20" ry="20" />
+    
+    <!-- Eyes -->
+    <rect class="logo-fg" x="35" y="80" width="20" height="3" />
+    <rect class="logo-fg" x="65" y="80" width="20" height="3" />
+    
+    <!-- Mustache -->
+    <path class="logo-fg" d="M40,100 Q60,115 80,100" stroke-width="5" fill="none" stroke="#1E1A18" />
+    
+    <!-- Mouth -->
+    <rect class="logo-fg" x="50" y="110" width="20" height="2" />
+  </g>
+  
+  <!-- Text "NOMAD" -->
+  <text x="100" y="150" font-family="serif" font-size="24" font-weight="bold" text-anchor="middle" class="logo-fg">NOMAD</text>
+  
+  <!-- Text "SAUNA CO." -->
+  <text x="100" y="175" font-family="serif" font-size="18" font-weight="bold" text-anchor="middle" class="logo-fg">SAUNA CO.</text>
+</svg>

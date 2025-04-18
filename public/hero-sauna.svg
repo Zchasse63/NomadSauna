@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+  <style>
+    .bg { fill: #E6D3AF; }
+    .wood-dark { fill: #5B402D; }
+    .wood-light { fill: #D9C4A3; }
+    .outline { fill: #1E1A18; }
+  </style>
+  
+  <!-- Background -->
+  <rect class="bg" width="1200" height="600" />
+  
+  <!-- Barrel Sauna -->
+  <g transform="translate(300, 100)">
+    <!-- Barrel body -->
+    <ellipse class="wood-dark" cx="300" cy="200" rx="280" ry="150" />
+    <rect class="wood-dark" x="20" y="200" width="560" height="200" />
+    <ellipse class="wood-dark" cx="300" cy="400" rx="280" ry="150" />
+    
+    <!-- Barrel slats -->
+    <g stroke="#1E1A18" stroke-width="2" fill="none">
+      <path d="M50,150 L50,450" />
+      <path d="M100,120 L100,480" />
+      <path d="M150,105 L150,495" />
+      <path d="M200,100 L200,500" />
+      <path d="M250,95 L250,505" />
+      <path d="M300,93 L300,507" />
+      <path d="M350,95 L350,505" />
+      <path d="M400,100 L400,500" />
+      <path d="M450,105 L450,495" />
+      <path d="M500,120 L500,480" />
+      <path d="M550,150 L550,450" />
+    </g>
+    
+    <!-- Door -->
+    <ellipse class="wood-light" cx="150" cy="300" rx="70" ry="100" />
+    <ellipse class="outline" cx="150" cy="300" rx="70" ry="100" fill="none" stroke="#1E1A18" stroke-width="4" />
+    
+    <!-- Window -->
+    <circle class="wood-light" cx="450" cy="300" r="40" />
+    <circle class="outline" cx="450" cy="300" r="40" fill="none" stroke="#1E1A18" stroke-width="4" />
+  </g>
+  
+  <!-- Nomad Sauna Co. text -->
+  <text x="600" y="550" font-family="serif" font-size="48" font-weight="bold" text-anchor="middle" class="outline">NOMAD SAUNA CO.</text>
+</svg>
