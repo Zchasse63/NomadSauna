@@ -53,7 +53,7 @@ export default function FAQPage() {
         </h1>
 
         <p className="text-xl text-[#5B402D] dark:text-[#D9C4A3] mb-12">
-          Find answers to common questions about our saunas, services, and the sauna experience. If you don't see your question answered here, please don't hesitate to contact us.
+          Find answers to common questions about our saunas, services, and the sauna experience. If you don\'t see your question answered here, please don\'t hesitate to contact us.
         </p>
 
         <div className="space-y-8 mb-16">

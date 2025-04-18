@@ -12,7 +12,7 @@ export default function NotFound() {
           Page Not Found
         </h2>
         <p className="mt-4 text-[#5B402D] dark:text-[#D9C4A3]">
-          Sorry, we couldn't find the page you're looking for. It might have been moved or deleted.
+          Sorry, we couldn\'t find the page you\'re looking for. It might have been moved or deleted.
         </p>
         <div className="mt-8">
           <Link href="/">
