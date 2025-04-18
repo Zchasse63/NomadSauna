@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
+import { PreloadImages } from "@/components/ui/preload-images";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import "./globals.css";
@@ -62,6 +63,7 @@ export default function RootLayout({
           defaultTheme="light"
           disableTransitionOnChange
         >
+          <PreloadImages images={["/images/showcase/IMG_7359.jpeg"]} />
           {children}
           <Toaster />
         </ThemeProvider>
