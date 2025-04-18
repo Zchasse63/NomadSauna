@@ -10,7 +10,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative mx-auto mt-32 max-w-[80rem] px-6 text-center md:px-8 overflow-hidden"
+      className="relative mx-auto mt-24 pt-8 max-w-[80rem] px-6 text-center md:px-8 overflow-hidden"
     >
       <div className="backdrop-filter-[12px] inline-flex h-7 items-center justify-between rounded-full border border-[#5B402D]/40 bg-[#5B402D]/10 px-3 text-xs text-[#1E1A18] transition-all ease-in hover:cursor-pointer hover:bg-[#5B402D]/20 group gap-1 translate-y-[-1rem] animate-fade-in opacity-0">
         <TextShimmer className="inline-flex items-center justify-center">
