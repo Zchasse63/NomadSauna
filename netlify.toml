@@ -1,12 +1,7 @@
 [build]
   command = "npm run build"
-  publish = ".next"
-
-[build.environment]
-  NETLIFY_NEXT_PLUGIN_SKIP = "true"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+  publish = "out"
+  ignore_warnings = true
 
 # Handle form submissions
 [[redirects]]
@@ -14,15 +9,15 @@
   to = "/.netlify/functions/:splat"
   status = 200
 
-# Handle 404s
-[[redirects]]
-  from = "/*"
-  to = "/404"
-  status = 404
+# Ensure static assets are served correctly
+[[headers]]
+  for = "/images/*"
+    [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 
-# Enable SPA routing
+# Handle 404s - but don't interfere with static assets
 [[redirects]]
   from = "/*"
-  to = "/index.html"
-  status = 200
+  to = "/404.html"
+  status = 404
   force = false

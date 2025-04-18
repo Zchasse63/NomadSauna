@@ -2,8 +2,8 @@
 
 import TextShimmer from "@/components/magicui/text-shimmer";
 import { Button } from "@/components/ui/button";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function HeroSection() {
@@ -13,7 +13,7 @@ export default function HeroSection() {
       className="relative mx-auto mt-32 max-w-[80rem] px-6 text-center md:px-8 overflow-hidden"
     >
       <div className="absolute inset-0 -z-10 opacity-10 dark:opacity-5">
-        <Image
+        <OptimizedImage
           src="/images/showcase/IMG_7359.jpeg"
           alt="Sauna background"
           fill

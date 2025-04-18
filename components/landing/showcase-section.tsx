@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 export default function ShowcaseSection() {
   const [selectedImage, setSelectedImage] = useState(0);
@@ -43,7 +43,7 @@ export default function ShowcaseSection() {
               transition={{ duration: 0.5 }}
               className="w-full h-full relative"
             >
-              <Image
+              <OptimizedImage
                 src={showcaseImages[selectedImage]}
                 alt={`Nomad Sauna Co. showcase image ${selectedImage + 1}`}
                 fill
@@ -87,7 +87,7 @@ export default function ShowcaseSection() {
                         }}
                         transition={{ duration: 0.3 }}
                       >
-                        <Image
+                        <OptimizedImage
                           src={image}
                           alt={`Thumbnail ${index + 1}`}
                           fill
