@@ -41,8 +41,8 @@ sharp(inputPath)
     // Resize the image
     return sharp(inputPath)
       .resize(1200, 630, {
-        fit: 'contain',
-        background: { r: 255, g: 255, b: 255, alpha: 1 }
+        fit: 'cover',
+        position: 'center'
       })
       .toFile(outputPath);
   })
