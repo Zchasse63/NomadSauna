@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     siteName: "Nomad Sauna Co.",
     images: [
       {
-        url: "/images/showcase/IMG_7359.jpeg",
+        url: "/images/og/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Nomad Sauna Co. Custom Sauna"
+        alt: "Nomad Sauna Co. Logo"
       }
     ]
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nomad Sauna Co. | Handcrafted Saunas for Modern Living",
     description: "Premium custom-built saunas crafted with sustainable materials and traditional Finnish techniques for an authentic experience anywhere.",
-    images: ["/images/showcase/IMG_7359.jpeg"],
+    images: ["/images/og/og-image.png"],
   }
 };
 
