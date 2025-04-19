@@ -14,6 +14,7 @@ const backupPath = path.join(ogDir, 'og-image-original.png');
 
 // Brand colors
 const DESERT_BEIGE = '#E6D3AF';
+const LIGHTER_BEIGE = '#E8D5B0'; // Lighter beige color from the Link Picture
 
 // Make sure the directory exists
 if (!fs.existsSync(ogDir)) {
@@ -50,7 +51,7 @@ sharp(linkPicturePath)
         width: 1200,
         height: 630,
         fit: 'contain',
-        background: { r: 230, g: 211, b: 175, alpha: 1 } // Desert Beige in RGBA
+        background: { r: 232, g: 213, b: 176, alpha: 1 } // Lighter Beige in RGBA
       })
       .toFile(outputPath);
   })
