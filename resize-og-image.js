@@ -7,7 +7,7 @@ console.log('Creating optimized Open Graph image...');
 
 // Define paths
 const ogDir = path.join(__dirname, 'public', 'images', 'og');
-const logoPath = path.join(__dirname, 'public', 'logo-no-bg.png'); // Use the logo without background
+const logoPath = path.join(__dirname, 'public', 'logo-font-no-bg.png'); // Use the logo with text without background
 const outputPath = path.join(ogDir, 'og-image-optimized.png');
 const finalPath = path.join(ogDir, 'og-image.png');
 const backupPath = path.join(ogDir, 'og-image-original.png');
@@ -44,10 +44,10 @@ sharp(logoPath)
   .then(metadata => {
     console.log(`Logo dimensions: ${metadata.width}×${metadata.height}`);
 
-    // Resize the logo to fit nicely in the OG image (max 500px height)
+    // Resize the logo to fit nicely in the OG image
     return sharp(logoPath)
       .resize({
-        height: 400,
+        height: 450,
         fit: 'contain',
         background: { r: 0, g: 0, b: 0, alpha: 0 } // Transparent background
       })
