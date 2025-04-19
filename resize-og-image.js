@@ -14,7 +14,7 @@ const backupPath = path.join(ogDir, 'og-image-original.png');
 
 // Brand colors
 const DESERT_BEIGE = '#E6D3AF';
-const LIGHTER_BEIGE = '#E8D8B8'; // Exact dominant color from the Link Picture (RGB: 232, 216, 184)
+const WARM_TAUPE = '#D9C4A3'; // Warm Taupe color for consistent background
 
 // Make sure the directory exists
 if (!fs.existsSync(ogDir)) {
@@ -51,7 +51,7 @@ sharp(linkPicturePath)
         width: 1200,
         height: 630,
         fit: 'contain',
-        background: { r: 232, g: 216, b: 184, alpha: 1 } // Exact dominant color from the Link Picture
+        background: { r: 217, g: 196, b: 163, alpha: 1 } // Warm Taupe color (#D9C4A3) for consistent background
       })
       .toFile(outputPath);
   })
