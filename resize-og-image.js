@@ -1,4 +1,4 @@
-// Script to create an optimized Open Graph image using the Link Picture
+// Script to create an optimized Open Graph image using the Link Picture No Bg
 const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
@@ -7,7 +7,7 @@ console.log('Creating optimized Open Graph image...');
 
 // Define paths
 const ogDir = path.join(__dirname, 'public', 'images', 'og');
-const linkPicturePath = path.join(__dirname, 'public', 'Link Picture.png'); // Use the Link Picture from public directory
+const linkPicturePath = path.join(__dirname, 'public', 'Link Picture No Bg.png'); // Use the Link Picture No Bg from public directory
 const outputPath = path.join(ogDir, 'og-image-optimized.png');
 const finalPath = path.join(ogDir, 'og-image.png');
 const backupPath = path.join(ogDir, 'og-image-original.png');
@@ -22,9 +22,9 @@ if (!fs.existsSync(ogDir)) {
   fs.mkdirSync(ogDir, { recursive: true });
 }
 
-// Check if the Link Picture file exists
+// Check if the Link Picture No Bg file exists
 if (!fs.existsSync(linkPicturePath)) {
-  console.error('❌ Error: Link Picture not found at', linkPicturePath);
+  console.error('❌ Error: Link Picture No Bg not found at', linkPicturePath);
   process.exit(1);
 }
 
