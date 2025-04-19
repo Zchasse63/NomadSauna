@@ -1,4 +1,4 @@
-// Script to create an optimized Open Graph image with proper background color
+// Script to create an optimized Open Graph image using the Link Picture
 const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
@@ -7,7 +7,7 @@ console.log('Creating optimized Open Graph image...');
 
 // Define paths
 const ogDir = path.join(__dirname, 'public', 'images', 'og');
-const logoPath = path.join(__dirname, 'public', 'logo-font-no-bg.png'); // Use the logo with text without background
+const linkPicturePath = path.join(__dirname, 'public', 'Link Picture.png'); // Use the Link Picture from public directory
 const outputPath = path.join(ogDir, 'og-image-optimized.png');
 const finalPath = path.join(ogDir, 'og-image.png');
 const backupPath = path.join(ogDir, 'og-image-original.png');
@@ -21,9 +21,9 @@ if (!fs.existsSync(ogDir)) {
   fs.mkdirSync(ogDir, { recursive: true });
 }
 
-// Check if the logo file exists
-if (!fs.existsSync(logoPath)) {
-  console.error('❌ Error: Logo image not found at', logoPath);
+// Check if the Link Picture file exists
+if (!fs.existsSync(linkPicturePath)) {
+  console.error('❌ Error: Link Picture not found at', linkPicturePath);
   process.exit(1);
 }
 
@@ -38,39 +38,20 @@ if (fs.existsSync(finalPath)) {
   }
 }
 
-// Get logo info
-sharp(logoPath)
+// Get Link Picture info
+sharp(linkPicturePath)
   .metadata()
   .then(metadata => {
-    console.log(`Logo dimensions: ${metadata.width}×${metadata.height}`);
+    console.log(`Link Picture dimensions: ${metadata.width}×${metadata.height}`);
 
-    // Resize the logo to fit nicely in the OG image
-    return sharp(logoPath)
+    // Resize the Link Picture to fit properly in the OG image
+    return sharp(linkPicturePath)
       .resize({
-        height: 450,
-        fit: 'contain',
-        background: { r: 0, g: 0, b: 0, alpha: 0 } // Transparent background
-      })
-      .toBuffer();
-  })
-  .then(resizedLogo => {
-    console.log('✅ Logo resized successfully');
-
-    // Create a new image with Desert Beige background
-    return sharp({
-      create: {
         width: 1200,
         height: 630,
-        channels: 4,
+        fit: 'contain',
         background: { r: 230, g: 211, b: 175, alpha: 1 } // Desert Beige in RGBA
-      }
-    })
-      .composite([
-        {
-          input: resizedLogo,
-          gravity: 'center'
-        }
-      ])
+      })
       .toFile(outputPath);
   })
   .then(() => {
