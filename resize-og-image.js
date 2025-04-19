@@ -1,4 +1,4 @@
-// Script to resize the Open Graph image to optimal dimensions (1200×630 pixels)
+// Script to create an optimized Open Graph image with proper background color
 const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
@@ -7,9 +7,13 @@ console.log('Creating optimized Open Graph image...');
 
 // Define paths
 const ogDir = path.join(__dirname, 'public', 'images', 'og');
-const inputPath = path.join(ogDir, 'og-image.png');
+const logoPath = path.join(__dirname, 'public', 'logo-no-bg.png'); // Use the logo without background
 const outputPath = path.join(ogDir, 'og-image-optimized.png');
+const finalPath = path.join(ogDir, 'og-image.png');
 const backupPath = path.join(ogDir, 'og-image-original.png');
+
+// Brand colors
+const DESERT_BEIGE = '#E6D3AF';
 
 // Make sure the directory exists
 if (!fs.existsSync(ogDir)) {
@@ -17,48 +21,71 @@ if (!fs.existsSync(ogDir)) {
   fs.mkdirSync(ogDir, { recursive: true });
 }
 
-// Check if the input file exists
-if (!fs.existsSync(inputPath)) {
-  console.error('❌ Error: Original OG image not found at', inputPath);
+// Check if the logo file exists
+if (!fs.existsSync(logoPath)) {
+  console.error('❌ Error: Logo image not found at', logoPath);
   process.exit(1);
 }
 
-// Create a backup of the original image
-try {
-  fs.copyFileSync(inputPath, backupPath);
-  console.log('✅ Created backup of original image at', backupPath);
-} catch (err) {
-  console.error('❌ Error creating backup:', err);
-  process.exit(1);
+// Create a backup of the original image if it exists
+if (fs.existsSync(finalPath)) {
+  try {
+    fs.copyFileSync(finalPath, backupPath);
+    console.log('✅ Created backup of original image at', backupPath);
+  } catch (err) {
+    console.error('❌ Error creating backup:', err);
+    process.exit(1);
+  }
 }
 
-// Get image info before resizing
-sharp(inputPath)
+// Get logo info
+sharp(logoPath)
   .metadata()
   .then(metadata => {
-    console.log(`Original image dimensions: ${metadata.width}×${metadata.height}`);
+    console.log(`Logo dimensions: ${metadata.width}×${metadata.height}`);
 
-    // Resize the image
-    return sharp(inputPath)
-      .resize(1200, 630, {
-        fit: 'cover',
-        position: 'center'
+    // Resize the logo to fit nicely in the OG image (max 500px height)
+    return sharp(logoPath)
+      .resize({
+        height: 400,
+        fit: 'contain',
+        background: { r: 0, g: 0, b: 0, alpha: 0 } // Transparent background
       })
+      .toBuffer();
+  })
+  .then(resizedLogo => {
+    console.log('✅ Logo resized successfully');
+
+    // Create a new image with Desert Beige background
+    return sharp({
+      create: {
+        width: 1200,
+        height: 630,
+        channels: 4,
+        background: { r: 230, g: 211, b: 175, alpha: 1 } // Desert Beige in RGBA
+      }
+    })
+      .composite([
+        {
+          input: resizedLogo,
+          gravity: 'center'
+        }
+      ])
       .toFile(outputPath);
   })
   .then(() => {
-    console.log('✅ Open Graph image resized successfully!');
+    console.log('✅ Open Graph image created successfully!');
 
-    // Replace the original with the optimized version
-    fs.renameSync(outputPath, inputPath);
-    console.log('✅ Original image replaced with optimized version');
+    // Replace or create the final image
+    fs.renameSync(outputPath, finalPath);
+    console.log('✅ OG image saved at', finalPath);
 
     // Add a version query parameter to the image URL in layout.tsx
     const timestamp = Date.now();
     console.log(`\nTo force cache refresh, update your OG image URL to include a version parameter:`);
     console.log(`/images/og/og-image.png?v=${timestamp}`);
 
-    return sharp(inputPath).metadata();
+    return sharp(finalPath).metadata();
   })
   .then(metadata => {
     console.log(`\nNew image dimensions: ${metadata.width}×${metadata.height}`);
@@ -68,6 +95,6 @@ sharp(inputPath)
     console.log('3. Use social media debugging tools to clear the cache for each platform');
   })
   .catch(err => {
-    console.error('❌ Error resizing image:', err);
+    console.error('❌ Error creating image:', err);
     process.exit(1);
   });
