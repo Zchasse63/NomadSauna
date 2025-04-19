@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "Nomad Sauna Co.",
     images: [
       {
-        url: "https://nomadsaunaco.com/images/og/og-image.png?v=1745025724176",
+        url: "https://nomadsaunaco.com/images/og/og-image.png?v=1745026222563",
         width: 1200,
         height: 630,
         alt: "Nomad Sauna Co. Logo"
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nomad Sauna Co. | Handcrafted Saunas for Modern Living",
     description: "Premium custom-built saunas crafted with sustainable materials and traditional Finnish techniques for an authentic experience anywhere.",
-    images: ["https://nomadsaunaco.com/images/og/og-image.png?v=1745025724176"],
+    images: ["https://nomadsaunaco.com/images/og/og-image.png?v=1745026222563"],
   }
 };
 
@@ -44,11 +44,11 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/logo-no-bg.png" type="image/png" />
         {/* Additional explicit meta tags for social media platforms */}
-        <meta property="og:image" content="https://nomadsaunaco.com/images/og/og-image.png?v=1745025724176" />
+        <meta property="og:image" content="https://nomadsaunaco.com/images/og/og-image.png?v=1745026222563" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Nomad Sauna Co. Logo" />
-        <meta name="twitter:image" content="https://nomadsaunaco.com/images/og/og-image.png?v=1745025724176" />
+        <meta name="twitter:image" content="https://nomadsaunaco.com/images/og/og-image.png?v=1745026222563" />
       </head>
       <body
         className={cn(
